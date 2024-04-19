@@ -22,7 +22,7 @@
                     <th>Col 3</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody">
                 <tr>
                     <td>L1 C1</td>
                     <td>L1 C2</td>
@@ -42,6 +42,7 @@
         </table>
     </div>
     <script>
+        
         async function buscarNomes(){
             let retorno = await fetch("https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking")
             let dados = await retorno.json();
@@ -60,8 +61,7 @@
                 </tr>`;
                 
             }
-            console.log(dados);
-
+            document.getElementById('tbody').innerHTML = tb ;
         }
 
     </script>
