@@ -68,3 +68,4 @@ function apagar() {
         alert("Necessário selecionar algum item.")
     }
 }
+
