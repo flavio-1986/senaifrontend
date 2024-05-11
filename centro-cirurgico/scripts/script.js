@@ -15,6 +15,8 @@ function gravar() {
     let nome = document.getElementById('nome').value;
     let status = document.getElementById('status').value;
     let local = document.getElementById('local').value;
+
+
     if (nome != '' && status != '') {
         let obj = {};
         obj.nome = nome;
@@ -50,6 +52,11 @@ function ataulizarTabela() {
                 tbody += `<tr onclick='editar(${i})'>
                 <td>${obj.nome}</td>
                 <td class="${tpStatus[obj.status]}">${obj.status}(${obj.local})</td>
+                <td>${obj.local}</td>
+                <td>${obj.hrPrevisto}</td>
+                <td>${obj.hrInicio}</td>
+                <td>${obj.fimCirurgia}</td>
+                <td>${obj.saidaPrevista}</td>
                 </tr>`;
             }
             i++;
@@ -66,6 +73,10 @@ function limparForm() {
     document.getElementById('nome').value = "";
     document.getElementById('status').value = "";
     document.getElementById('local').value = "";
+    document.getElementById('hrPrevisto').value = "";
+    document.getElementById('hrInicio').value = "";
+    document.getElementById('fimCirurgia').value = "";
+    document.getElementById('saidaPrevista').value = "";
 }
 
 function editar(indice) {
@@ -75,6 +86,10 @@ function editar(indice) {
     document.getElementById('nome').value = obj.nome;
     document.getElementById('status').value = obj.status;
     document.getElementById('local').value = obj.local;
+    document.getElementById('hrPrevisto').value = obj.hrPrevisto;
+    document.getElementById('hrInicio').value = obj.hrInicio;
+    document.getElementById('fimCirurgia').value = obj.fimCirurgia;
+    document.getElementById('saidaPrevista').value = obj.saidaPrevista;
 }
 
 function apagar() {
