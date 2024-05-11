@@ -74,7 +74,7 @@ function editar(indice) {
     document.getElementById('_lineNumber').value = obj._lineNumber;
     document.getElementById('nome').value = obj.nome;
     document.getElementById('status').value = obj.status;
-    document.getElementById('local').value = obj.status;
+    document.getElementById('local').value = obj.local;
 }
 
 function apagar() {
