@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>To Do List</title>
+    <title>Centro Cirúrgico</title>
     <style>
         tr{
             cursor: pointer;
@@ -13,23 +13,27 @@
 </head>
 <body>
     <div class="container-md mt-3">
-        <h2>TO-DO List</h2>
+        <h2>Gerenciador Centro Cirúrgico</h2>
         <div class="row">
             <input type="hidden" id="indice" value="">
             <input type="hidden" id="_lineNumber" value="">
-            <div class="col-md-8">
-                <label for="nome" class="form-label">Item:</label>
+            <div class="col-md-6">
+                <label for="nome" class="form-label">Nome:</label>
                 <input type="text" id="nome" name="nome" class="form-control">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="status" class="form-label">Status</label>
                 <select name="status" id="status" class="form-select">
                     <option value="">Selecione</option>
-                    <option>Em Fila</option>
-                    <option>Iniciado</option>
-                    <option>Concluido</option>
+                    <option>Pré Operatório</option>
+                    <option>Transferido</option>
+                    <option>Recuperação</option>
                 </select>
-            </div>            
+            </div>
+            <div class="col-md-3">
+                <label for="local" class="form-label">Local:</label>
+                <input type="text" id="local" name="local" class="form-control">
+            </div>                       
         </div>        
         <button class="btn btn-danger mt-2  float-end" id="bt-apagar">Apagar</button>
         <button class="btn btn-secondary mt-2 me-2 float-end" id="bt-novo">Novo</button>
@@ -38,7 +42,10 @@
             <thead>
                 <tr>
                     <th>
-                        Item da Lista
+                        Nome do Paciente
+                    </th>
+                    <th>
+                        Status
                     </th>
                 </tr>
             </thead>

@@ -1,12 +1,12 @@
 document.getElementById('bt-apagar').addEventListener('click', apagar);
 document.getElementById('bt-gravar').addEventListener('click', gravar);
 document.getElementById('bt-novo').addEventListener('click', limparForm);
-let lsItem = [];
+let lista = [];
 
 let tpStatus = {
-    "Em Fila": "text-bg-info",
-    "Iniciado": "text-bg-success",
-    "Concluido": "text-bg-danger"
+    "Pré Operatório": "text-bg-info",
+    "Transferido": "text-bg-success",
+    "Recuperação": "text-bg-danger"
 }
 
 function gravar() {
@@ -20,16 +20,16 @@ function gravar() {
         obj.status = status;
         if (indice == "") {
             createRow(obj).then((o) => {
-                lsItem.push(o);
+                lista.push(o);
                 ataulizarTabela();
             });
         } else {
             patchRow(_lineNumber, obj).then((o) => {
-                lsItem[indice] = o;
+                lista[indice] = o;
                 ataulizarTabela();
             });
         }
-        console.table(lsItem);
+        console.table(lista);
         
         limparForm();
     } else {
@@ -38,13 +38,16 @@ function gravar() {
 }
 
 function ataulizarTabela() {
-    localStorage.setItem("lsItem",JSON.stringify(lsItem));
+    localStorage.setItem("lista",JSON.stringify(lista));
     let tbody = '';
-    if (lsItem.length > 0) {
+    if (lista.length > 0) {
         let i = 0;
-        for (const obj of lsItem) {
+        for (const obj of lista) {
             if(obj.nome != ""){
-                tbody += `<tr onclick='editar(${i})'><td class="${tpStatus[obj.status]}">${obj.nome}</td></tr>`;
+                tbody += `<tr onclick='editar(${i})'>
+                <td>${obj.nome}</td>
+                <td class="${tpStatus[obj.status]}">${obj.status}</td>
+                </tr>`;
             }
             i++;
         }
@@ -62,7 +65,7 @@ function limparForm() {
 }
 
 function editar(indice) {
-    obj = lsItem[indice];
+    obj = lista[indice];
     document.getElementById('indice').value = indice;
     document.getElementById('_lineNumber').value = obj._lineNumber;
     document.getElementById('nome').value = obj.nome;
@@ -74,7 +77,7 @@ function apagar() {
     let _lineNumber = document.getElementById('_lineNumber').value;
     if (indice != "") {
         deleteRow(_lineNumber).then(() =>{
-            lsItem.splice(indice, 1);
+            lista.splice(indice, 1);
             ataulizarTabela();
         });
         limparForm();
@@ -114,7 +117,7 @@ async function patchRow(lineNumber, payload) {
         foo: "bar"
     };
     */
-    const url = "https://api.zerosheets.com/v1/p8y" + lineNumber;
+    const url = "https://api.zerosheets.com/v1/p8y/" + lineNumber;
     const response = await fetch(url, {
       method: "PATCH",
       body: JSON.stringify(payload)
@@ -126,7 +129,7 @@ async function patchRow(lineNumber, payload) {
 }
 
 async function deleteRow(lineNumber) {
-    const url = "https://api.zerosheets.com/v1/p8y" + lineNumber; // lineNumber comes from the get request
+    const url = "https://api.zerosheets.com/v1/p8y/" + lineNumber; // lineNumber comes from the get request
     await fetch(url, {
         method: "DELETE"
     });
@@ -134,6 +137,6 @@ async function deleteRow(lineNumber) {
 }
 
 getData().then( (ls) => {
-    lsItem = ls;
+    lista = ls;
     ataulizarTabela();
 } );
