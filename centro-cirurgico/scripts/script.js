@@ -14,10 +14,13 @@ function gravar() {
     let _lineNumber = document.getElementById('_lineNumber').value;
     let nome = document.getElementById('nome').value;
     let status = document.getElementById('status').value;
+    let local = document.getElementById('local').value;
     if (nome != '' && status != '') {
         let obj = {};
         obj.nome = nome;
         obj.status = status;
+        obj.local = local;
+
         if (indice == "") {
             createRow(obj).then((o) => {
                 lista.push(o);
@@ -46,7 +49,7 @@ function ataulizarTabela() {
             if(obj.nome != ""){
                 tbody += `<tr onclick='editar(${i})'>
                 <td>${obj.nome}</td>
-                <td class="${tpStatus[obj.status]}">${obj.status}</td>
+                <td class="${tpStatus[obj.status]}">${obj.status}(${obj.local})</td>
                 </tr>`;
             }
             i++;
@@ -62,6 +65,7 @@ function limparForm() {
     document.getElementById('_lineNumber').value = "";
     document.getElementById('nome').value = "";
     document.getElementById('status').value = "";
+    document.getElementById('local').value = "";
 }
 
 function editar(indice) {
@@ -70,6 +74,7 @@ function editar(indice) {
     document.getElementById('_lineNumber').value = obj._lineNumber;
     document.getElementById('nome').value = obj.nome;
     document.getElementById('status').value = obj.status;
+    document.getElementById('local').value = obj.status;
 }
 
 function apagar() {
