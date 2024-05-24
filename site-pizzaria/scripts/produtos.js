@@ -62,4 +62,12 @@ let produtos = [
         fatias6: 35.00,
         fatias8: 45.00,
         fatias12: 55.00
+    },
+    {
+        img: "imagens/calabacon-removebg-preview.png",
+        dsImg: "pizza sabor bacon e calabresa",
+        nome: "Calabacon",
+        fatias6: 35.00,
+        fatias8: 45.00,
+        fatias12: 55.00
     }]
