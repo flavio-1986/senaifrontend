@@ -74,7 +74,6 @@ function atualizarTabela() {
 
 function atualizarPlusDash(tipo){
     let botoes = document.querySelectorAll(`.bi-${tipo}-square-fill`);
-    console.log(botoes)
     for (const bt of botoes){
         bt.addEventListener('click',()=>{
             let id = bt.id.replace(tipo,'');
@@ -84,7 +83,8 @@ function atualizarPlusDash(tipo){
             if(tipo == 'dash'){
                 produtos[id].quantidade--;
             }
+            atualizarTabela();
         });
-        atualizarTabela();
+        
     }
 }
