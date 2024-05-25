@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            background-color: #efedec;
+            width: 1000px;
+            height: 100vh;
+            padding: 60px;            
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            /* background-color: #ebecf0; */
+        }
+
+        .item{
+            width: 277px;
+            height: 368px;
+            background-color: white;
+            text-align: center;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            justify-content: center;
+        }
+
+        .item img{
+            width: 230px;
+            height: 230px;
+            margin-top: 22px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <h1>Lira e Cia</h1>
+            <p>Catálogo de vendas</p>
+        </header>
+        <section>
+            <div class="item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Candle-flame-and-reflection.jpg/1200px-Candle-flame-and-reflection.jpg" alt="">
+                <p>Banho de Mar</p>
+                <p>vela aromática - 300g</p>
+                <p>R$39,00</p>
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
