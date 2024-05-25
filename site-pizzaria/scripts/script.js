@@ -101,7 +101,7 @@ enviar.addEventListener('click', ()=>{
     }
     msg +=`Total = ${total}`;
     msg = encodeURI(msg);
-    let fone ='556198593443';
+    let fone ='556198593743';
     let link =`https://api.whatsapp.com/send?phone=${fone}&text=${msg}`;
     window.open(link);
 });
