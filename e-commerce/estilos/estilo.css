@@ -67,9 +67,9 @@ html {
 }
 
 .content .list-menu li a:hover {
-    background-color: #333333;
-    color: #ffc506;
-    border-bottom: 4px solid #ffc506;
+    background-color: #777674;
+    color: #0e0d0d;
+    border-bottom: 4px solid #e9e7e1;
 }   
 
 /* Primeira section */ 
@@ -137,7 +137,7 @@ html {
 .btn {
     width: 480px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 /* Sobre Nós */
@@ -158,6 +158,7 @@ html {
     align-items: center;
     justify-content: center;
     padding-bottom: 5rem;
+    padding-top: 70px;
 }
 
 .main {
@@ -184,27 +185,27 @@ html {
     justify-content: center;
 }
 
-/* secction cardapio */
-.cardapio{
+/* secction vela */
+.vela{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(12, 12, 12, 0.7),rgba(15, 15, 15, 0.7)), url(../imagens/cardapio.jpg);
+    background-image: linear-gradient(rgba(12, 12, 12, 0.7),rgba(15, 15, 15, 0.7)), url(../imagens/cinza-SALA-DE-ESTAR.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-.cardapio h2{
+.vela h2{
     font-size: 5rem;
     color: #e6e6e6;
     text-transform: uppercase;
     margin-top: 2rem;
 }
 
-.itens-cardapio {
+.itens-vela {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 450px));
@@ -215,17 +216,17 @@ html {
     margin-bottom: 2rem;
 }
 
-.itens-cardapio img{
+.itens-vela img{
     width: 100%;
     height: 200px;
 }
 
-.itens-cardapio div{
+.itens-vela div{
     background-color: #5e5252;
     box-shadow: 0px 0px 4px 1px;
 }
 
-.itens-cardapio .info {
+.itens-vela .info {
     background-color: rgb(221, 221, 221);
     border: none;
     display: flex;
@@ -235,14 +236,14 @@ html {
     flex-direction: column;
 }
 
-.itens-cardapio .info h3{
+.itens-vela .info h3{
     font-size: 1.8rem;
     text-transform: uppercase;
     text-decoration: underline;
     margin-bottom: 1rem;
 }
 
-.itens-cardapio .info h4{
+.itens-vela .info h4{
     font-size: 1.4rem;
     text-transform: uppercase;
     margin-bottom: 0.6rem;
@@ -254,14 +255,14 @@ html {
     
 }
 
-.itens-cardapio .info h4 span{
+.itens-vela .info h4 span{
     color: #5e5252;
     margin-left: 1.5rem;
     text-decoration: underline;
     font-weight: 800;    
 }
 
-.itens-cardapio .info button{
+.itens-vela .info button{
     width: 200px;
     height: 30px;
     background-color: #ffc506;
@@ -272,7 +273,7 @@ html {
     transition: all 200ms ease-in;
 }
 
-.itens-cardapio .info button:hover{
+.itens-vela .info button:hover{
     background-color: #5e5252;
     color: #ffffff;
 }
@@ -327,7 +328,7 @@ footer {
 }
 
 @media(max-width: 1200px){
-    .itens-cardapio {
+    .itens-vela {
         width: 90%;        
     }
 
