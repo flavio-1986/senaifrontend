@@ -57,7 +57,7 @@ function atualizarTabela() {
             tbody.innerHTML += `
             <tr>
                 <td>${p.nome}</td>
-                <td>${p.quantidade}x${p.fatias8}=${p.quantidade*p.fatias8}(8 fatias)</td>
+                <td>${p.quantidade}x${p.fatias8}=${p.quantidade*p.fatias8}( vela)</td>
                 <td>
                     <i class="bi bi-plus-square-fill" id="plus${id}"></i>
                     <i class="bi bi-dash-square-fill" id="dash${id}"></i>
